@@ -1,0 +1,88 @@
+@use "~/src/scss/variables/color";
+@use "~/src/scss/variables/fonts";
+@use "~/src/scss/variables/images";
+@use "~/src/scss/variables/mixin";
+
+.bottom {
+    position: relative;
+
+    .bottom_wrapper {
+        display: flex;
+        margin: 0 40px;
+        padding: 15px 50px;
+    }
+    .logo {
+        width: 230px;
+        height: 30px;
+        background-image: images.$logo;
+        background-repeat: no-repeat;
+        margin-top: -4px;
+    }
+
+    .nav {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+
+        .nav_item {
+            cursor: pointer;
+            margin-left: 40px;
+
+            .sub_wrapper {
+                position: absolute;
+                top: 35px;
+                right: 0;
+                left: 0;
+                padding-top: 24px;
+                visibility: hidden;
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+
+            &:hover .sub_wrapper {
+                opacity: 1;
+                transform: translateY(0);
+                visibility: visible;
+            }
+
+            .active {
+                color: color.$white;
+                &::before {
+                    width: 100%;
+                }
+            }
+
+            &:hover .nav_link::before {
+                width: 100%;
+            }
+            .nav_link {
+                letter-spacing: 2px;
+                display: inline-block;
+                text-transform: uppercase;
+                font-size: 11px;
+                font-weight: 600;
+                color: color.$blur;
+                text-decoration: none;
+                cursor: pointer;
+                position: relative;
+
+                &::before {
+                    content: " ";
+                    position: absolute;
+                    height: 1.5px;
+                    background-color: color.$white;
+                    width: 0;
+                    transition: all 0.3s;
+                    top: calc(100% + 4px);
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                .icon {
+                    color: color.$blur;
+                }
+            }
+        }
+    }
+}

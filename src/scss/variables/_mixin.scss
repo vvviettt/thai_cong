@@ -1,0 +1,10 @@
+@mixin flex_vertical_center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin transition {
+    transition-duration: 200ms;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}

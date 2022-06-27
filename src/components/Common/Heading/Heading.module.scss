@@ -1,0 +1,10 @@
+@use "~/src/scss/variables/color";
+@use "~/src/scss/variables/fonts";
+@use "~/src/scss/variables/images";
+@use "~/src/scss/variables/mixin";
+
+.heading {
+    width: 100%;
+    background-color: color.$black;
+    position: relative;
+}

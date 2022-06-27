@@ -1,0 +1,33 @@
+@use "~/src/scss/variables/color";
+.top {
+    padding-top: 2%;
+    padding-bottom: 4.5%;
+    .wrapper {
+        margin: 0 40px;
+        padding: 15px 50px;
+
+        .link {
+            ul {
+                list-style: none;
+                padding: 0;
+                li {
+                    margin-top: 15px;
+                    a {
+                        font-size: 12px;
+                        font-weight: 600;
+                        color: color.$white;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+        .store {
+            a {
+                font-size: 12px;
+            }
+
+            p {
+            }
+        }
+    }
+}

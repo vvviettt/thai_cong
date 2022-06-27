@@ -1,0 +1,110 @@
+@use "~/src/scss/variables/color";
+@use "~/src/scss/variables/fonts";
+@use "~/src/scss/variables/images";
+@use "~/src/scss/variables/mixin";
+
+.top {
+    padding: 15px 50px;
+    margin: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .line {
+        background-color: #666666;
+        width: calc(100% - 100px);
+        height: 0px;
+        border-bottom: 1px solid #333;
+        position: absolute;
+        bottom: 0;
+        left: 50px;
+    }
+    .left {
+        display: flex;
+        font-size: fonts.$small;
+        font-weight: 600;
+        .active {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        span {
+            margin: 0 10px;
+            color: #666666;
+            display: flex;
+            align-items: center;
+        }
+        .store {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #999;
+            font-weight: 600;
+            font-size: 11px;
+            @include mixin.transition;
+            &:hover {
+                text-decoration: underline;
+                color: #fff;
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        font-size: fonts.$small;
+
+        .hotline {
+            font-size: 10px;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .languages {
+            display: flex;
+            &_btn {
+                display: flex;
+                align-items: center;
+                font-size: 9px;
+                margin-left: 15px;
+                padding: 0;
+                cursor: pointer;
+                background-color: transparent;
+                outline: none;
+                opacity: 0.4;
+                @include mixin.transition;
+                .ic_vn {
+                    width: 13px;
+                    height: 9px;
+                    padding-right: 4px;
+                    display: inline-block;
+                    background-repeat: no-repeat;
+                    background-image: images.$ic_vn;
+                }
+
+                .ic_en {
+                    width: 13px;
+                    height: 9px;
+                    padding-right: 4px;
+                    display: inline-block;
+                    background-repeat: no-repeat;
+                    background-image: images.$ic_en;
+                }
+
+                &:hover {
+                    opacity: 1;
+                    text-decoration: underline;
+                }
+            }
+
+            .active {
+                opacity: 1;
+            }
+        }
+    }
+}
